@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:kingsevent/services/authorization.dart';
 
@@ -18,19 +20,19 @@ class _SignInScreenState extends State<SignInScreen> {
       appBar: AppBar(
         backgroundColor: Colors.red[600],
         elevation: 0.0,
-        title: Text('Sign in to KINGS EVENT'),
+        title: const Text('Sign in to KINGS EVENT'),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
         child: ElevatedButton(
-          child: Text('Sign In'),
+          child: const Text('Sign In'),
           onPressed: () async {
-            dynamic result = await _authService.SignInAnon();
+            dynamic result = await _authService.signInAnon();
             if (result == null) {
-              print('Error signing in!');
+              log('Error signing in!');
             } else {
-              print('Signed in');
-              print(result.uid);
+              log('Signed in');
+              log(result.uid);
             }
           },
         ),

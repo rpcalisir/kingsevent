@@ -11,8 +11,6 @@ class AuthenticateScreen extends StatefulWidget {
 class _AuthenticateScreenState extends State<AuthenticateScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SignInScreen(),
-    );
+    return const SignInScreen();
   }
 }
