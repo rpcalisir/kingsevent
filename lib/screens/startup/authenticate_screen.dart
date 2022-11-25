@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kingsevent/screens/startup/sign_in_screen.dart';
+import 'package:kingsevent/screens/startup/sign_up_with_email.dart';
 
 class AuthenticateScreen extends StatefulWidget {
   const AuthenticateScreen({super.key});
@@ -9,8 +10,17 @@ class AuthenticateScreen extends StatefulWidget {
 }
 
 class _AuthenticateScreenState extends State<AuthenticateScreen> {
+  bool showSignIn = true;
+  void toggleView() {
+    setState(() => showSignIn = !showSignIn);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const SignInScreen();
+    if (showSignIn) {
+      return SignInScreen(toggleView: toggleView);
+    } else {
+      return SignUpWithEmailScreen(toggleView: toggleView);
+    }
   }
 }

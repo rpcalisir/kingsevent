@@ -9,9 +9,12 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.blue[400],
       appBar: AppBar(
-        title: const Text('KINGS EVENT'),
+        title: const Text(
+          'KINGS EVENT',
+          style: TextStyle(color: Colors.black),
+        ),
         backgroundColor: Colors.yellow,
         elevation: 0.0,
         actions: [
