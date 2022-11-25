@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:kingsevent/models/current_user.dart';
 import 'package:kingsevent/screens/startup/loading_screen.dart';
-import 'package:kingsevent/services/authorization.dart';
+import 'package:kingsevent/services/authentication_service.dart';
 import 'package:provider/provider.dart';
 
 void main() async {

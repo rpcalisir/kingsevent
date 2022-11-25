@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kingsevent/services/authorization.dart';
+import 'package:kingsevent/services/authentication_service.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
