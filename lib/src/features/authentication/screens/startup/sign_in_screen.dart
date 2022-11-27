@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kingsevent/src/constants/icon_strings.dart';
 import 'package:kingsevent/src/services/authentication_service.dart';
 import 'package:kingsevent/src/shared/loading.dart';
 
@@ -103,8 +104,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     const SizedBox(height: 20.0),
                     IconButton(
-                        onPressed: () {},
-                        icon: Image.asset('assets/icons/google_sign_in.png')),
+                      onPressed: () {},
+                      icon: Image.asset(googleSignInIcon),
+                    ),
                   ]),
                 )),
           );

@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:kingsevent/src/features/authentication/models/current_user.dart';
-import 'package:kingsevent/src/features/authentication/screens/startup/loading_screen.dart';
+import 'package:kingsevent/src/features/authentication/screens/startup/wrapper.dart';
 import 'package:kingsevent/src/services/authentication_service.dart';
 import 'package:kingsevent/src/utils/theme/theme.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: AppThemeUtility.lightTheme,
         darkTheme: AppThemeUtility.darkTheme,
         themeMode: ThemeMode.system,
-        home: const LoadingScreen(),
+        home: const Wrapper(),
       ),
     );
   }

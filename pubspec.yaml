@@ -42,6 +42,7 @@ dependencies:
   provider: ^6.0.4
   flutter_spinkit: ^5.1.0
   google_fonts: ^3.0.1
+  flutter_native_splash: ^2.2.15
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +54,22 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
+flutter_native_splash:
+  flutter_native_splash:
+  color: "#f7f6f1"
+  image: assets/images/kings_event_logo.png
+  color_dark: "#272727"
+  image_dark: assets/images/kings_event_logo.png
+
+  android_12:
+    image: assets/images/kings_event_logo.png
+    icon_background_color: "#f7f6f1"
+    image_dark: assets/images/kings_event_logo.png
+    icon_background_color_dark: "#272727"
+
+  web: false
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -67,7 +84,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/icons/google_sign_in.png
+   - assets/icons/
+   - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

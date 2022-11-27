@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:kingsevent/src/features/authentication/models/current_user.dart';
 import 'package:kingsevent/src/features/authentication/screens/dashboard/dashboard_screen.dart';
 import 'package:kingsevent/src/features/authentication/screens/startup/authenticate_screen.dart';
+import 'package:kingsevent/src/features/authentication/screens/startup/welcome_screen.dart';
 import 'package:provider/provider.dart';
 
-class LoadingScreen extends StatelessWidget {
-  const LoadingScreen({super.key});
+class Wrapper extends StatelessWidget {
+  const Wrapper({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class LoadingScreen extends StatelessWidget {
     if (kDebugMode) print(currentUser);
 
     if (currentUser == null) {
-      return const AuthenticateScreen();
+      return const WelcomeScreen();
     } else {
       return DashboardScreen();
     }

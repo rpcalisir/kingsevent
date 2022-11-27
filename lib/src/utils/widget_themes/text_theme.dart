@@ -2,17 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextThemeUtility {
+  TextThemeUtility._();
+
   static TextTheme lightTextTheme = TextTheme(
-    titleLarge: GoogleFonts.montserrat(
-        color: Colors.black, fontWeight: FontWeight.bold),
+    titleSmall: GoogleFonts.montserrat(
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
     bodySmall: GoogleFonts.montserrat(
-        color: Colors.black, fontWeight: FontWeight.bold),
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+      fontSize: 24.0,
+    ),
   );
 
   static TextTheme darkTextTheme = TextTheme(
-    titleLarge: GoogleFonts.montserrat(
-        color: Colors.white, fontWeight: FontWeight.bold),
+    titleSmall: GoogleFonts.montserrat(
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+    ),
     bodySmall: GoogleFonts.montserrat(
-        color: Colors.white, fontWeight: FontWeight.bold),
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+      fontSize: 24.0,
+    ),
   );
 }
