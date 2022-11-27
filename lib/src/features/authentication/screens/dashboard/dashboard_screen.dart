@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kingsevent/services/authentication_service.dart';
+import 'package:kingsevent/src/services/authentication_service.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
@@ -9,7 +9,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[400],
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: const Text(
           'KINGS EVENT',

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:kingsevent/services/authentication_service.dart';
-import 'package:kingsevent/shared/loading.dart';
+import 'package:kingsevent/src/services/authentication_service.dart';
+import 'package:kingsevent/src/shared/loading.dart';
 
-class SignInScreen extends StatefulWidget {
+class SignUpWithEmailScreen extends StatefulWidget {
   final Function toggleView;
-  const SignInScreen({super.key, required this.toggleView});
+  const SignUpWithEmailScreen({super.key, required this.toggleView});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpWithEmailScreen> createState() => _SignUpWithEmailScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpWithEmailScreenState extends State<SignUpWithEmailScreen> {
   final AuthService _authService = AuthService();
+
+  final _formKey = GlobalKey<FormState>();
 
   String email = '';
   String password = '';
   String error = '';
-
-  final _formKey = GlobalKey<FormState>();
 
   bool isLoading = false;
 
@@ -30,14 +30,14 @@ class _SignInScreenState extends State<SignInScreen> {
             appBar: AppBar(
               backgroundColor: Colors.red[600],
               elevation: 0.0,
-              title: const Text('Sign in to KINGS EVENT'),
+              title: const Text('Sign up to KINGS EVENT'),
               actions: <Widget>[
                 TextButton.icon(
                     onPressed: () {
                       widget.toggleView();
                     },
                     icon: const Icon(Icons.person),
-                    label: const Text('Sign Up')),
+                    label: const Text('Sign In')),
               ],
             ),
             body: Container(
@@ -57,8 +57,9 @@ class _SignInScreenState extends State<SignInScreen> {
                         }),
                     TextFormField(
                         decoration: const InputDecoration(hintText: 'Password'),
-                        validator: (userInput) =>
-                            userInput!.isEmpty ? 'Enter an password!' : null,
+                        validator: (userInput) => userInput!.length < 6
+                            ? 'Enter a password +6 chars long!'
+                            : null,
                         obscureText: true,
                         onChanged: (val) {
                           setState(() => password = val);
@@ -72,7 +73,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             isLoading = true;
                           });
                           dynamic result = await _authService
-                              .signInWithEmailAndPassword(email, password);
+                              .signUpWithEmailAndPassword(email, password);
                           if (result == null) {
                             setState(() {
                               error = 'Check user input!';
@@ -82,7 +83,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         }
                       },
                       child: const Text(
-                        'Sign in',
+                        'Sign up',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

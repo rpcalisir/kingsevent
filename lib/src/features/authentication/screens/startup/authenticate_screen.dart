@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kingsevent/screens/startup/sign_in_screen.dart';
-import 'package:kingsevent/screens/startup/sign_up_with_email.dart';
+import 'package:kingsevent/src/features/authentication/screens/startup/sign_in_screen.dart';
+import 'package:kingsevent/src/features/authentication/screens/startup/sign_up_with_email.dart';
 
 class AuthenticateScreen extends StatefulWidget {
   const AuthenticateScreen({super.key});

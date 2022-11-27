@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:kingsevent/services/authentication_service.dart';
-import 'package:kingsevent/shared/loading.dart';
+import 'package:kingsevent/src/services/authentication_service.dart';
+import 'package:kingsevent/src/shared/loading.dart';
 
-class SignUpWithEmailScreen extends StatefulWidget {
+class SignInScreen extends StatefulWidget {
   final Function toggleView;
-  const SignUpWithEmailScreen({super.key, required this.toggleView});
+  const SignInScreen({super.key, required this.toggleView});
 
   @override
-  State<SignUpWithEmailScreen> createState() => _SignUpWithEmailScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpWithEmailScreenState extends State<SignUpWithEmailScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   final AuthService _authService = AuthService();
-
-  final _formKey = GlobalKey<FormState>();
 
   String email = '';
   String password = '';
   String error = '';
+
+  final _formKey = GlobalKey<FormState>();
 
   bool isLoading = false;
 
@@ -26,21 +26,31 @@ class _SignUpWithEmailScreenState extends State<SignUpWithEmailScreen> {
     return isLoading
         ? const Loading()
         : Scaffold(
-            backgroundColor: Colors.yellow[40],
             appBar: AppBar(
-              backgroundColor: Colors.red[600],
               elevation: 0.0,
-              title: const Text('Sign up to KINGS EVENT'),
+              title: Text(
+                'Sign in to KINGS EVENT',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
               actions: <Widget>[
                 TextButton.icon(
-                    onPressed: () {
-                      widget.toggleView();
-                    },
-                    icon: const Icon(Icons.person),
-                    label: const Text('Sign In')),
+                  onPressed: () {
+                    widget.toggleView();
+                  },
+                  icon: Icon(
+                    Icons.person,
+                    color: Theme.of(context).backgroundColor,
+                    size: 18.0,
+                  ),
+                  label: Text(
+                    'Sign Up',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
               ],
             ),
             body: Container(
+                color: Colors.white,
                 padding:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
                 child: Form(
@@ -57,9 +67,8 @@ class _SignUpWithEmailScreenState extends State<SignUpWithEmailScreen> {
                         }),
                     TextFormField(
                         decoration: const InputDecoration(hintText: 'Password'),
-                        validator: (userInput) => userInput!.length < 6
-                            ? 'Enter a password +6 chars long!'
-                            : null,
+                        validator: (userInput) =>
+                            userInput!.isEmpty ? 'Enter an password!' : null,
                         obscureText: true,
                         onChanged: (val) {
                           setState(() => password = val);
@@ -73,7 +82,7 @@ class _SignUpWithEmailScreenState extends State<SignUpWithEmailScreen> {
                             isLoading = true;
                           });
                           dynamic result = await _authService
-                              .signUpWithEmailAndPassword(email, password);
+                              .signInWithEmailAndPassword(email, password);
                           if (result == null) {
                             setState(() {
                               error = 'Check user input!';
@@ -83,7 +92,7 @@ class _SignUpWithEmailScreenState extends State<SignUpWithEmailScreen> {
                         }
                       },
                       child: const Text(
-                        'Sign up',
+                        'Sign in',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -91,7 +100,11 @@ class _SignUpWithEmailScreenState extends State<SignUpWithEmailScreen> {
                     Text(
                       error,
                       style: const TextStyle(color: Colors.red, fontSize: 14.0),
-                    )
+                    ),
+                    const SizedBox(height: 20.0),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Image.asset('assets/icons/google_sign_in.png')),
                   ]),
                 )),
           );
