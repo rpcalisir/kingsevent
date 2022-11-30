@@ -12,7 +12,7 @@ class TextThemeUtility {
     bodySmall: GoogleFonts.montserrat(
       color: Colors.black,
       fontWeight: FontWeight.bold,
-      fontSize: 24.0,
+      fontSize: 16.0,
     ),
   );
 
@@ -24,7 +24,7 @@ class TextThemeUtility {
     bodySmall: GoogleFonts.montserrat(
       color: Colors.white,
       fontWeight: FontWeight.bold,
-      fontSize: 24.0,
+      fontSize: 16.0,
     ),
   );
 }

@@ -1,0 +1,12 @@
+const String rEmail = "Email";
+const String rPassword = "Password";
+const String rBirthDate = "Birth Date";
+const String rPhoneNumber = "Phone Number";
+const String rInvalidPhoneNumber = "Invalid Phone Number";
+const String rforgetPassword = "Forget Password?";
+const String rSignIn = "Sign In";
+const String rSignUp = "Sign Up";
+const String rSignInWithGoogle = "Sign In with Google";
+const String rDontHaveAccount = "Dont have an Account?";
+const String rFullName = "Full Name";
+const String rAppTitle = "KINGS EVENT";

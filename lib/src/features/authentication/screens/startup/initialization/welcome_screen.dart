@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kingsevent/src/constants/image_strings.dart';
+import 'package:kingsevent/src/features/authentication/screens/startup/sign_in/sign_in_screen.dart';
+import 'package:kingsevent/src/features/authentication/screens/startup/sign_up/sign_up_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -33,14 +35,26 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: OutlinedButton(
-                      onPressed: () {}, child: Text("Sign In".toUpperCase())),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignInScreen()));
+                      },
+                      child: Text("Sign In".toUpperCase())),
                 ),
                 const SizedBox(
                   width: 10.0,
                 ),
                 Expanded(
                   child: ElevatedButton(
-                      onPressed: () {}, child: Text("Sign Up".toUpperCase())),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpScreen()));
+                      },
+                      child: Text("Sign Up".toUpperCase())),
                 ),
               ],
             ),

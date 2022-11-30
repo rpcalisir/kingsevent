@@ -3,6 +3,8 @@ import 'package:kingsevent/src/utils/widget_themes/elevated_button_theme.dart';
 import 'package:kingsevent/src/utils/widget_themes/outlined_button_theme.dart';
 import 'package:kingsevent/src/utils/widget_themes/text_theme.dart';
 
+import '../widget_themes/input_decoration_theme.dart';
+
 class AppThemeUtility {
   AppThemeUtility._();
 
@@ -23,6 +25,7 @@ class AppThemeUtility {
     }),
     outlinedButtonTheme: OutlinedButtonThemeUtility.lightOutlinedButtonTheme,
     elevatedButtonTheme: ElevatedButtonThemeUtility.lightElevatedButtonTheme,
+    inputDecorationTheme: InputDecorationThemeUtility.lightInputDecorationTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -42,5 +45,6 @@ class AppThemeUtility {
     }),
     outlinedButtonTheme: OutlinedButtonThemeUtility.darkOutlinedButtonTheme,
     elevatedButtonTheme: ElevatedButtonThemeUtility.darkElevatedButtonTheme,
+    inputDecorationTheme: InputDecorationThemeUtility.darkInputDecorationTheme,
   );
 }
