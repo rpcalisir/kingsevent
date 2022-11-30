@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:kingsevent/src/constants/sizes.dart';
 import 'package:kingsevent/src/constants/text_strings.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:intl/intl.dart';
 
 class SignUpScreenFormWidget extends StatefulWidget {
   const SignUpScreenFormWidget({
@@ -54,9 +54,10 @@ class _SignUpScreenFormWidgetState extends State<SignUpScreenFormWidget> {
               ),
               onTap: () {
                 showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext builder) {
-                      return SizedBox(
+                  context: context,
+                  builder: (_) => Column(
+                    children: [
+                      SizedBox(
                         height:
                             MediaQuery.of(context).copyWith().size.height / 3,
                         child: CupertinoDatePicker(
@@ -70,8 +71,14 @@ class _SignUpScreenFormWidgetState extends State<SignUpScreenFormWidget> {
                           use24hFormat: true,
                           mode: CupertinoDatePickerMode.date,
                         ),
-                      );
-                    });
+                      ),
+                      CupertinoButton(
+                        child: const Text('OK'),
+                        onPressed: () => Navigator.of(context).pop(),
+                      )
+                    ],
+                  ),
+                );
               },
             ),
             const SizedBox(height: rFormHeight - 20),
