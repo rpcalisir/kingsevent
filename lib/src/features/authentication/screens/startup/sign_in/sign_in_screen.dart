@@ -17,9 +17,9 @@ class SignInScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
               padding: const EdgeInsets.all(rDefaultSize),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   FormHeaderWidget(),
                   SignInForm(),
                 ],

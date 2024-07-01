@@ -3,8 +3,8 @@ import 'package:kingsevent/src/constants/image_strings.dart';
 
 class FormHeaderWidget extends StatelessWidget {
   const FormHeaderWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

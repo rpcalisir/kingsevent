@@ -7,8 +7,8 @@ import 'package:flutter/cupertino.dart';
 
 class SignUpScreenFormWidget extends StatefulWidget {
   const SignUpScreenFormWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<SignUpScreenFormWidget> createState() => _SignUpScreenFormWidgetState();

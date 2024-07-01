@@ -4,8 +4,8 @@ import 'package:kingsevent/src/constants/text_strings.dart';
 
 class SignUpScreenFooterWidget extends StatelessWidget {
   const SignUpScreenFooterWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

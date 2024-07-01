@@ -4,8 +4,8 @@ import 'package:kingsevent/src/constants/text_strings.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

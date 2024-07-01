@@ -5,8 +5,8 @@ import 'package:kingsevent/src/constants/text_strings.dart';
 
 class SignInFooterWidget extends StatelessWidget {
   const SignInFooterWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
