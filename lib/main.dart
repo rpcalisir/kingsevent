@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:kingsevent/src/features/authentication/models/current_user.dart';
 import 'package:kingsevent/src/features/authentication/screens/startup/initialization/wrapper.dart';
 import 'package:kingsevent/src/services/authentication_service.dart';
@@ -21,10 +23,12 @@ class MyApp extends StatelessWidget {
     return StreamProvider<CurrentUser?>.value(
       value: AuthService().user,
       initialData: null,
-      child: MaterialApp(
+      child: GetMaterialApp(
         theme: AppThemeUtility.lightTheme,
         darkTheme: AppThemeUtility.darkTheme,
         themeMode: ThemeMode.system,
+        defaultTransition: Transition.leftToRightWithFade,
+        transitionDuration: const Duration(microseconds: 500),
         home: const Wrapper(),
       ),
     );
